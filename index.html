@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <label for= "bookReviewarea">Enter your book review:</label>
+    <textarea id = "bookReviewarea" rows = "4" cols = "50"></textarea>
+    <button id = "bookReviewBtn">Display Book Review</button>
+    <p id = "bookReviewResult"></p>
+  
+  
+   <label for= "bioTextarea">Enter your personal bio:</label>
+    <textarea id = "bioTextarea" rows = "4" cols = "50"></textarea>
+    <button id = "bioBtn">Display Styled Bio</button>
+    <p id = "bioResult"></p>
+
+    <label for= "diaryEntryInput">Enter your personal diary entry:</label>
+    <textarea id = "diaryEntryInput" rows = "4" cols = "50"></textarea>
+    <button id = "diaryEntryBtn">Display Diary Entry</button>
+    <p id = "diaryEntryResult"></p>
+
+
+
+    <script>
+      const bookReviewarea = document.getElementById("bookReviewarea")
+      const bookReviewBtn = document.getElementById("bookReviewBtn")
+      const bookReviewResult = document.getElementById("bookReviewResult")
+      
+      bookReviewBtn.addEventListener("click" , function(){
+      const bookReview = bookReviewarea.value
+      bookReviewResult.textContent = `Your favorite books: ${bookReview}`
+      
+      })
+
+
+      const bioTextarea = document.getElementById("bioTextarea")
+const bioBtn = document.getElementById("bioBtn")
+const bioResult = document.getElementById("bioResult")
+
+bioBtn.addEventListener("click" , function(){
+const personalBio = bioTextarea.value
+bioResult.innerHTML = `<i>  ${personalBio} </i>`
+
+})
+
+
+const diaryEntryInput = document.getElementById("diaryEntryInput")
+const diaryEntryBtn = document.getElementById("diaryEntryBtn")
+const diaryEntryResult = document.getElementById("diaryEntryResult")
+
+diaryEntryBtn.addEventListener("click" , function(){
+const diaryEntry = diaryEntryInput.value
+const currentDateTime = new Date().toLocaleString()
+diaryEntryResult.innerHTML = `<p><strong>${currentDateTime}</strong></p><p>${diaryEntry}</p>`
+})
+</script>
+
+  </body>
+</html>
